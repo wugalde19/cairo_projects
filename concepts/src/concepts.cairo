@@ -118,6 +118,67 @@ fn main() {
     // This is a single line comment
     
     println!("## Control Flow");
+
+    // == If/Else statements
+    let number = 3;
+
+    if number == 12 {
+        println!("number is 12");
+    } else if number == 3 {
+        println!("number is 3");
+    } else if number - 2 == 1 {
+        println!("number minus 2 is 1");
+    } else {
+        println!("number not found");
+    }
+
+    // Using if in a let statement
+    let condition = true;
+    let number = if condition {
+        5
+    } else {
+        6
+    };
+
+    if number == 5 {
+        println!("condition was true and number is {}", number);
+    }
+
+    // == Loops
+    let mut i: usize = 0;
+    loop {
+        if i > 10 {
+            break;
+        }
+        if i == 5 {
+            i += 1;
+            continue;
+        }
+        println!("i = {}", i);
+        i += 1;
+    };
+
+    // Returning Values from Loops
+    let mut counter = 0;
+
+    let result = loop {
+        if counter == 10 {
+            break counter * 2;
+        }
+        counter += 1;
+    };
+
+    println!("The result is {}", result);
+
+    let mut number = 3;
+
+    while number != 0 {
+        println!("{number}!");
+        number -= 1;
+    };
+
+    println!("LIFTOFF!!!");
+    
 }
 
 fn another_function(x: felt252) {
