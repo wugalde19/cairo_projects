@@ -77,7 +77,63 @@ fn main() {
     let (x3, y3): (felt252, felt252) = (2, 3);
 
     println!("## Functions");
+    another_function(5);
+    let x = another_function_returning();
+    let y = plus_one(5);
+
+    // == Named params
+    // In Cairo, named parameters allow you to specify the names of arguments
+    // when you call a function. This makes the function calls more readable
+    // and self-descriptive. If you want to use named parameters, you need to
+    // specify the name of the parameter and the value you want to pass to it.
+    // The syntax is parameter_name: value. If you pass a variable that has
+    // the same name as the parameter, you can simply write :parameter_name
+    // instead of parameter_name: variable_name.
+    let first_arg = 3;
+    let second_arg = 4;
+    foo(x: first_arg, y: second_arg);
+
+    let x = 1;
+    let y = 2;
+    foo(:x, :y);
+
+    // == Statements and Expressions
+    // + Statements are instructions that perform some action and do not return a value.
+    // + Expressions evaluate to a resultant value.
+
+    // Examples of statement (variable declaration, function definition, macro invocation, etc.)
+    let y = 6;
+
+    // Examples of expression (calling a function, calling a macro, etc.)
+    // A new scope block created with curly brackets is an expression, for example:
+    // 'y' will receive the value returned by the block
+    let y = {
+        let x = 3;
+        x + 1
+    };
+
+    println!("The value of y is: {}", y);
+
+
+
     println!("## Comments");
     println!("## Control Flow");
 }
+
+fn another_function(x: felt252) {
+    println!("The value of x is: {}", x);
+}
+
+fn another_function_returning() -> u32 {
+    5
+}
+
+fn plus_one(x: u32) -> u32 {
+    x + 1
+    // NOTE: If we add a semicolon at the end of the expression, it becomes a statement
+    // and we will get an error
+    // x + 1;
+}
+
+fn foo(x: u8, y: u8) {}
 
