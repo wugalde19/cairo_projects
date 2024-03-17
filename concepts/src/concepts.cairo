@@ -14,6 +14,17 @@ fn main() {
     x = 6;
     println!("The value of x is: {}", x);
 
+    // Shadowing
+    // Consists in re-declaring a variable with the same name.
+    // Cairo will also consider the scope of the variable
+    let y = 5;
+    let y = y + 1;
+    {
+        let y = y * 2;
+        println!("Inner scope y value is (12): {}", y);
+    }
+    println!("Outer scope y value is (6): {}", y);
+
     println!("## Data Types");
     println!("## Functions");
     println!("## Comments");
