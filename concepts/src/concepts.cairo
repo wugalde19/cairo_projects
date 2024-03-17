@@ -114,9 +114,9 @@ fn main() {
 
     println!("The value of y is: {}", y);
 
-
-
     println!("## Comments");
+    // This is a single line comment
+    
     println!("## Control Flow");
 }
 
