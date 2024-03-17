@@ -17,3 +17,11 @@ scarb build
 ```
 scarb cairo-run
 ```
+
+## Collections
+
+### Arrays
+```
+len()
+is_empty()
+```
